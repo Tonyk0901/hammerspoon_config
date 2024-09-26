@@ -88,7 +88,12 @@ local function setChromeCookie(cookie)
 end
 
 local function copyToClipboard(text)
-    hs.pasteboard.setContents(text)
+    local result = hs.pasteboard.setContents(text)
+    if result then
+        hs.alert.show("copied to clipboard!")
+    else
+        hs.alert.show("failed to copy.")
+    end
 end
 
 local function show_chooser()
