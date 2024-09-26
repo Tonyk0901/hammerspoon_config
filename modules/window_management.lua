@@ -2,8 +2,9 @@ local hotkey = require "hs.hotkey"
 local window = require "hs.window"
 local spaces = require "hs.spaces"
 
-function getGoodFocusedWindow(nofull)
+local function getGoodFocusedWindow(nofull)
     local win = window.focusedWindow()
+
     -- 모달이나 약식 window 가 아닌 standard 형태의 윈도우를 찾는다.
     if not win or not win:isStandard() then
         return
@@ -16,7 +17,7 @@ function getGoodFocusedWindow(nofull)
     return win
 end
 
-function flashScreen(screen)
+local function flashScreen(screen)
     hs.alert.show("No more spaces to that direction!")
     local flash =
         hs.canvas.new(screen:fullFrame()):appendElements(
@@ -35,13 +36,7 @@ function flashScreen(screen)
     )
 end
 
-function switchSpace(skip, dir)
-    for i = 1, skip do
-        hs.eventtap.keyStroke({"ctrl", "fn"}, dir, 0) -- "fn" is a bugfix!
-    end
-end
-
-function moveWindowOneSpace(dir, switch)
+local function moveWindowOneSpace(dir, switch)
     -- 현재 포커스된 window 를 찾는다.
     local win = getGoodFocusedWindow(true)
     if not win then
