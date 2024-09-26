@@ -1,0 +1,7 @@
+{
+  "Lua.diagnostics.globals": ["hs"],
+  "Lua.workspace.library": [
+    "/Applications/Hammerspoon.app/Contents/Resources/extensions/hs",
+    "/Users/earlysloth/.hammerspoon/Spoons/EmmyLua.spoon/annotations"
+  ]
+}
