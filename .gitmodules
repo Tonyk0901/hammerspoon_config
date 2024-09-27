@@ -1,0 +1,3 @@
+[submodule "constants"]
+	path = constants
+	url = https://github.com/Tonyk0901/hammerspoon_config_constants.git
