@@ -82,6 +82,7 @@ local function setChromeCookie(cookie)
     tell application "Google Chrome" to execute front window's active tab javascript "
     document.cookie = 'token=]] ..
         cookie .. [[;';
+    window.location.reload();
     "
     ]]
     hs.osascript.applescript(script)
