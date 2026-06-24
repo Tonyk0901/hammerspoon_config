@@ -2,6 +2,7 @@ require("modules.window_management")
 require("modules.quick_open_applications")
 require("modules.window_resizer")
 require("modules.token_chooser")
+require("modules.open_repos")
 
 hs.hotkey.bind(
     {"cmd", "alt", "ctrl"},
